@@ -2,23 +2,23 @@ package e1;
 
 import java.util.Random;
 
-public class ChessboardImpl implements Chessboard{
+public class ChessboardImpl implements Chessboard {
 
     private final int size;
-    private final Pair<Integer, Integer> pawn;
-    private Pair<Integer, Integer> knight;
+    private final Pawn pawn;
+    private final Knight knight;
     private final Random random = new Random();
 
     public ChessboardImpl(final int gridSize) {
         this.size = gridSize;
-        this.knight = randomEmptyPosition();
-        this.pawn = randomEmptyPosition();
+        this.knight = new Knight( randomEmptyPosition() );
+        this.pawn = new Pawn( randomEmptyPosition() );
     }
 
     public ChessboardImpl(final int gridSize, final Pair<Integer, Integer> knightPosition, Pair<Integer, Integer> pawnPosition) {
         this.size = gridSize;
-        this.knight = randomEmptyPosition();
-        this.pawn = randomEmptyPosition();
+        this.knight = new Knight( knightPosition );
+        this.pawn = new Pawn( pawnPosition );
     }
 
 
@@ -32,19 +32,12 @@ public class ChessboardImpl implements Chessboard{
         return size;
     }
 
-    public Pair<Integer, Integer> getPawn() {
+    public Pawn getPawn() {
         return pawn;
     }
 
-    public Pair<Integer, Integer> getKnight() {
+    public Knight getKnight() {
         return knight;
     }
-
-    public void setKnight(Pair<Integer, Integer> knight) {
-        this.knight = knight;
-    }
-
-
-
 
 }

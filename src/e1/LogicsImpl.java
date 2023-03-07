@@ -19,24 +19,24 @@ public class LogicsImpl implements Logics {
 		if (row<0 || col<0 || row >= this.board.getSize() || col >= this.board.getSize()) {
 			throw new IndexOutOfBoundsException();
 		}
-		// Below a compact way to express allowed moves for the knight
-		int x = row-this.board.getKnight().getX();
-		int y = col-this.board.getKnight().getY();
-		if (x!=0 && y!=0 && Math.abs(x)+Math.abs(y)==3) {
-			this.board.setKnight( new Pair<>(row,col) );
-			return this.board.getPawn().equals(this.board.getKnight());
+
+		this.board.getKnight().move(row, col);
+
+		if (this.board.getKnight().getCoordinates().equals(this.board.getPawn().getCoordinates())) {
+			return true;
 		}
+
 		return false;
 	}
 
 	@Override
 	public boolean hasKnight(int row, int col) {
-		return this.board.getKnight().equals(new Pair<>(row,col));
+		return ( this.board.getKnight().getCoordinates().equals(new Pair<>(row,col)) );
 	}
 
 	@Override
 	public boolean hasPawn(int row, int col) {
-		return this.board.getKnight().equals(new Pair<>(row,col));
+		return this.board.getPawn().getCoordinates().equals(new Pair<>(row,col));
 	}
 
 

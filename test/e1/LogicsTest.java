@@ -8,13 +8,11 @@ import static org.junit.jupiter.api.Assertions.*;
 class LogicsTest {
 
     private static final int gridSize = 4;
-    private static final Pair<Integer, Integer> knightPosition = new Pair<>(0, 0);
-    private static final Pair<Integer, Integer> pawnPosition = new Pair<>(1, 2);
     private Logics logic;
 
     @BeforeEach
     void setUp() {
-        logic = new LogicsImpl(gridSize, knightPosition, pawnPosition);
+        logic = new LogicsImpl(gridSize, new Pair<>(0, 0), new Pair<>(1, 2));
     }
 
     @Test
