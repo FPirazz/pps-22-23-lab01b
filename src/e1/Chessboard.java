@@ -1,7 +1,8 @@
 package e1;
 
 public interface Chessboard {
-    int getSize();
+    int getGridSize();
     Pawn getPawn();
     Knight getKnight();
+    void checkKnightOutOfBounds();
 }
