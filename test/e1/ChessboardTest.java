@@ -16,13 +16,13 @@ class ChessboardTest {
         chessboard.getKnight().move(-1, -2);
         assertThrows( IndexOutOfBoundsException.class,
                 () -> chessboard.checkKnightOutOfBounds(),
-                "Invalid knight movement out of the board for negative coordinates"
+                "Invalid Knight movement out of the board for negative coordinates"
         );
 
         chessboard.getKnight().move(chessboard.getGridSize() + 1, chessboard.getGridSize() + 1);
         assertThrows( IndexOutOfBoundsException.class,
                 () -> chessboard.checkKnightOutOfBounds(),
-                "Invalid knight movement out of the board for out of bounds coordinates"
+                "Invalid Knight movement out of the board for out of bounds coordinates"
         );
     }
 }

@@ -7,7 +7,7 @@ import static org.junit.jupiter.api.Assertions.*;
 
 class ChessPieceTest {
 
-    private static Knight knight;
+    private static ChessPiece knight;
 
     @BeforeEach
     void setUp() {
@@ -15,7 +15,7 @@ class ChessPieceTest {
     }
 
     @Test
-    void testKnigthMovement() {
+    void testKnightMovement() {
         assertTrue(knight.getCoordinates().equals(new Pair<>(0, 0)));
 
         knight.move(1, 1);

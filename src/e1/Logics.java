@@ -13,14 +13,14 @@ public interface Logics{
     /**
      * @param row
      * @param col
-     * @return whether position row,col has the knight
+     * @return whether position row,col has the Knight
      */
     boolean hasKnight(int row, int col);
 
     /**
      * @param row
      * @param col
-     * @return whether position row,col has the pawn
+     * @return whether position row,col has the Pawn
      */
     boolean hasPawn(int row, int col);
 }
